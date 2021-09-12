@@ -33,7 +33,21 @@ class SubObject2(ObjectBase):
         self.child_cust_value2 = child_cust_value2
         self.child_mutable2 = child_mutable2 if child_mutable2 is not None else []
 
-        
+
+print('Object A:')
+print(A := ObjectBase.create('sub_object_type1', cust_parent_val1 = 'Modified Parent Value1.'))
+print(A.label)
+print(A.cust_parent_val1)
+print(A.child_mutable1)
+print(A.child_cust_value1 + '\n')
+print(B := ObjectBase.create('sub_object_type2', child_cust_value2 = 'Modified Value 2.'))
+print('Object B:')
+print(B.label)
+print(B.cust_parent_val1)
+print(B.child_mutable2)
+print(B.child_cust_value2)
+
+
 # Object A:
 # <__main__.SubObject1 object at 0x000001F538AE3490>
 # Label For Sub Object Type1.
