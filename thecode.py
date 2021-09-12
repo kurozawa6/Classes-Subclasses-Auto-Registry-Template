@@ -1,18 +1,18 @@
 class ObjectBase:
-    subclasses = {}
+    __subclasses = {}
     label = 'Inherited Label.'
 
     def __init__(self, cust_parent_val1 = 'Default Custom Parent Value.',):
         self.cust_parent_val1 = cust_parent_val1
 
     def __init_subclass__(cls):
-        cls.subclasses[cls._SUB_OBJECT_TYPE] = cls
+        cls.__subclasses[cls._SUB_OBJECT_TYPE] = cls
 
     @classmethod
     def create(cls, sub_object_type, **params):
-        if sub_object_type not in cls.subclasses:
+        if sub_object_type not in cls.__subclasses:
             raise ValueError(f'Invalid sub object type: {sub_object_type}')
-        return cls.subclasses[sub_object_type](**params)
+        return cls.__subclasses[sub_object_type](**params)
 
 
 class SubObject1(ObjectBase):
