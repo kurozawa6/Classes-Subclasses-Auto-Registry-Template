@@ -1,6 +1,6 @@
 class ObjectBase:
     subclasses = {}
-    label = 'Default Inherited Label.'
+    label = 'Inherited Label.'
 
     def __init__(self, cust_parent_val1 = 'Default Custom Parent Value.',):
         self.cust_parent_val1 = cust_parent_val1
@@ -17,7 +17,7 @@ class ObjectBase:
 
 class SubObject1(ObjectBase):
     _SUB_OBJECT_TYPE = 'sub_object_type1'
-    label = 'Default Label For Sub Object Type1.'
+    label = 'Label For Sub Object Type1.'
 
     def __init__(self, child_cust_value1 = 'Default Custom Value 1.', child_mutable1 = None, **kwargs):
         super().__init__(**kwargs)
@@ -36,14 +36,14 @@ class SubObject2(ObjectBase):
         
 # Object A:
 # <__main__.SubObject1 object at 0x000001F538AE3490>
-# Default Label For Sub Object Type1.
+# Label For Sub Object Type1.
 # Modified Parent Value1.
 # []
 # Default Custom Value 1.
 # 
 # <__main__.SubObject2 object at 0x000001F538AE3550>
 # Object B:
-# Default Inherited Label.
+# Inherited Label.
 # Default Custom Parent Value.
 # []
 # Modified Value 2.
