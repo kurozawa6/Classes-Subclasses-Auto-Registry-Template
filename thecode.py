@@ -34,6 +34,8 @@ class SubObject2(ObjectBase):
         self.child_mutable2 = child_mutable2 if child_mutable2 is not None else {}
 
 
+# Sample Output
+
 print('Object A:')
 print(A := ObjectBase.create('sub_object_type1', cust_parent_val1 = 'Modified Parent Value1.'))
 print(A.label)
