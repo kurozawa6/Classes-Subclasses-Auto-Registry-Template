@@ -28,7 +28,7 @@ class SubObject1(ObjectBase):
 class SubObject2(ObjectBase):
     _SUB_OBJECT_TYPE = 'sub_object_type2'
 
-    def __init__(self, child_cust_value2 = 'default', child_mutable2 = None, **kwargs):
+    def __init__(self, child_cust_value2 = 'Default Custom Value 2', child_mutable2 = None, **kwargs):
         super().__init__(**kwargs)
         self.child_cust_value2 = child_cust_value2
         self.child_mutable2 = child_mutable2 if child_mutable2 is not None else {}
