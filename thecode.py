@@ -31,7 +31,7 @@ class SubObject2(ObjectBase):
     def __init__(self, child_cust_value2 = 'default', child_mutable2 = None, **kwargs):
         super().__init__(**kwargs)
         self.child_cust_value2 = child_cust_value2
-        self.child_mutable2 = child_mutable2 if child_mutable2 is not None else []
+        self.child_mutable2 = child_mutable2 if child_mutable2 is not None else {}
 
 
 print('Object A:')
@@ -59,5 +59,5 @@ print(B.child_cust_value2)
 # Object B:
 # Inherited Label.
 # Default Custom Parent Value.
-# []
+# {}
 # Modified Value 2.
