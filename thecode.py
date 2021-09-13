@@ -17,7 +17,7 @@ class ObjectBase:
 
 class SubObject1(ObjectBase):
     _subclass_type = 'type1'
-    label = 'Label For Sub Object Type1.'
+    label = 'Label For Sub Class Type1.'
 
     def __init__(self, child_cust_value1 = 'Default Custom Value 1.', child_mutable1 = None, **kwargs):
         super().__init__(**kwargs)
