@@ -6,17 +6,17 @@ class ObjectBase:
         self.cust_parent_val1 = cust_parent_val1
 
     def __init_subclass__(cls):
-        cls.__subclasses[cls._SUB_OBJECT_TYPE] = cls
+        cls.__subclasses[cls._subclass_type] = cls
 
     @classmethod
-    def create(cls, sub_object_type, **params):
-        if sub_object_type not in cls.__subclasses:
-            raise ValueError(f'Invalid sub object type: {sub_object_type}')
-        return cls.__subclasses[sub_object_type](**params)
+    def create(cls, _subclass_type, **params):
+        if _subclass_type not in cls.__subclasses:
+            raise ValueError(f'Invalid sub object type: {_subclass_type}')
+        return cls.__subclasses[_subclass_type](**params)
 
 
 class SubObject1(ObjectBase):
-    _SUB_OBJECT_TYPE = 'sub_object_type1'
+    _subclass_type = 'type1'
     label = 'Label For Sub Object Type1.'
 
     def __init__(self, child_cust_value1 = 'Default Custom Value 1.', child_mutable1 = None, **kwargs):
@@ -26,9 +26,9 @@ class SubObject1(ObjectBase):
 
 
 class SubObject2(ObjectBase):
-    _SUB_OBJECT_TYPE = 'sub_object_type2'
+    _subclass_type = 'type2'
 
-    def __init__(self, child_cust_value2 = 'Default Custom Value 2', child_mutable2 = None, **kwargs):
+    def __init__(self, child_cust_value2 = 'default', child_mutable2 = None, **kwargs):
         super().__init__(**kwargs)
         self.child_cust_value2 = child_cust_value2
         self.child_mutable2 = child_mutable2 if child_mutable2 is not None else {}
