@@ -37,12 +37,12 @@ class SubObject2(ObjectBase):
 # Sample Output
 
 print('Object A:')
-print(A := ObjectBase.create('sub_object_type1', cust_parent_val1 = 'Modified Parent Value1.'))
+print(A := ObjectBase.create('_subclass_type1', cust_parent_val1 = 'Modified Parent Value1.'))
 print(A.label)
 print(A.cust_parent_val1)
 print(A.child_mutable1)
 print(A.child_cust_value1 + '\n')
-print(B := ObjectBase.create('sub_object_type2', child_cust_value2 = 'Modified Value 2.'))
+print(B := ObjectBase.create('_subclass_type2', child_cust_value2 = 'Modified Value 2.'))
 print('Object B:')
 print(B.label)
 print(B.cust_parent_val1)
